@@ -50,7 +50,7 @@ function read_properties {
 # $2 - SonarQube URL. Must end with a slash (required)
 # $3 - CE Task ID (required)
 function sq_ce_task {
-	flags="-s -L"
+	flags="-s -L -k"
 	if [[ -n "${1}" ]] && [[ "${1}" != "" ]]; then
 		flags+=" -u ${1}"
 	fi
@@ -66,7 +66,7 @@ function sq_ce_task {
 # $2 - SonarQube URL. Must end with a slash (required)
 # $3 - Analysis ID (required)
 function sq_qualitygates_project_status {
-	flags="-s -L"
+	flags="-s -L -k"
 	if [[ -n "${1}" ]] && [[ "${1}" != "" ]]; then
 		flags+=" -u ${1}"
 	fi
@@ -83,7 +83,7 @@ function sq_qualitygates_project_status {
 #      Pass an empty string to access SonarQube anonymously.
 # $2 - SonarQube URL. Must end with a slash (required)
 function sq_server_version {
-	flags="-s -L"
+	flags="-s -L -k"
 	if [[ -n "${1}" ]] && [[ "${1}" != "" ]]; then
 		flags+=" -u ${1}"
 	fi
